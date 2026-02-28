@@ -1,20 +1,16 @@
-import numpy as np
+students = []
 
-names = ["Me", "Lia", "Jake"]
+for i in range(3):
+    student = {}
 
-steps = np.array([
-  [4500, 5200, 4800, 5000, 5300],
-  [4000, 4100, 3900, 4200, 4600],
-  [6000, 5800, 5900, 6100, 6200]
-])
+    student["name"] = input("Enter name: ")
+    student["age"] = int(input("Enter age: "))
+    student["grade"] = int(input("Enter grade: "))
 
-for i in range(len(names)):
-    total_steps = np.sum(steps[i])
-    average_steps = np.mean(steps[i])
-    minimum_steps = np.min(steps[i])
-    maximum_steps = np.max(steps[i])
-    print(
-        f"{names[i]} - Total Steps: {total_steps} | "
-        f"Average: {average_steps:.1f} | "
-        f"Min: {minimum_steps} | Max: {maximum_steps}"
-    )
+    students.append(student)
+    print()
+
+print("Class Directory:")
+
+for s in students:
+    print(f"{s['name']} | Age: {s['age']} | Grade: {s['grade']}")
